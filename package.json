@@ -1,0 +1,24 @@
+{
+  "name": "node-dynamo-db",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js",
+    "ci-start": "node app.js",
+    "test": "cd dynamodb && newman run CraftyAPI_Tests.json && cd ..",
+    "create-db": "cd dynamodb && node createCarsTable.js && cd ..",
+    "delete-db": "cd dynamodb && node deleteCarsTable.js && cd ..",
+    "load-data": "cd dynamodb && node loadCarData.js && cd ..",
+    "read-data": "cd dynamodb && node readDataTest.js && cd .."
+  },
+  "dependencies": {
+    "aws-sdk": "^2.188.0",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  }
+}
